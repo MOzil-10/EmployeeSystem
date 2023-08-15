@@ -11,7 +11,12 @@ export class EmployeeService {
   getEmployee() {
     return this.httpClient.get('http://localhost:3000/employees');
   }
+
   addEmployee(employeeData: any) {
     return this.httpClient.post('http://localhost:3000/employees', employeeData);
+  }
+
+  getEmployeeByEmail(email: string) {
+    return this.httpClient.get('http://localhost:3000/employees?email=' + email);
   }
 }

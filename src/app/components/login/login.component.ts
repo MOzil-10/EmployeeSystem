@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent {
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private employeeService: EmployeeService,
+    private router: Router 
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -20,8 +26,22 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      // Process the login data, e.g., authenticate with a backend API
-      console.log(this.loginForm.value);
+      const formData = this.loginForm.value;
+  
+      this.employeeService.getEmployeeByEmail(formData.email).subscribe(
+        (user: any) => {
+          if (user.length > 0 && user[0].password === formData.password) {
+            // Successful login, navigate to the list page
+            this.router.navigate(['/list']);
+          } else {
+            // Invalid credentials, show error message
+            console.error('Invalid credentials');
+          }
+        },
+        (error: any) => {
+          console.error('Error fetching user data:', error);
+        }
+      );
     }
   }
 }

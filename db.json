@@ -4,9 +4,41 @@
       "id": 1,
       "firstName": "ozil",
       "lastName": "mesut",
-      "email":"ozil@gmail.com",
-      "password":"12345",
-      "confirmPasswors":"12345"
+      "email": "ozil@gmail.com",
+      "password": "12345",
+      "confirmPasswors": "12345"
+    },
+    {
+      "id": 42,
+      "firstName": "mukosi",
+      "lastName": "ozil",
+      "email": "ozil@gmail.com",
+      "password": "1111111111",
+      "confirmPassword": "1111111111"
+    },
+    {
+      "id": 95,
+      "firstName": "mesut",
+      "lastName": "ozil",
+      "email": "ozeeil@gmail.com",
+      "password": "999999",
+      "confirmPassword": "999999"
+    },
+    {
+      "id": 65,
+      "firstName": "Roooney",
+      "lastName": "Joseph",
+      "email": "joe@gmail.com",
+      "password": "000000",
+      "confirmPassword": "000000"
+    },
+    {
+      "id": 31,
+      "firstName": "ree",
+      "lastName": "ree",
+      "email": "ree@gmail.com",
+      "password": "222222",
+      "confirmPassword": "222222"
     }
   ]
 }
