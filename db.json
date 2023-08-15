@@ -1,0 +1,12 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "ozil",
+      "lastName": "mesut",
+      "email":"ozil@gmail.com",
+      "password":"12345",
+      "confirmPasswors":"12345"
+    }
+  ]
+}
